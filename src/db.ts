@@ -1,6 +1,5 @@
 import { createConnection } from "typeorm";
 import { User } from "./entities/User";
-import { router } from './routes/user.router';
 import express from "express";
 const app = express();
 export const main = async () => {

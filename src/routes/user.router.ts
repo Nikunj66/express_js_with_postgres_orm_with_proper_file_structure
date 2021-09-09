@@ -4,9 +4,9 @@ import { createUser, deleteUser, getAll, getOne, updateUser } from '../controlle
 
 const router = express.Router();
 
-router.post('/api/user', createUser);
-router.get("/api/user",getAll);
-router.get("/api/user/:id",getOne);
-router.delete("/api/user/:id",deleteUser);
-router.put("/api/user/:id",updateUser);
-export { router };
+router.post("/", createUser);
+router.get("",getAll);
+router.get("/:id",getOne);
+router.delete("/:id",deleteUser);
+router.put("/:id",updateUser);
+export { router as user };

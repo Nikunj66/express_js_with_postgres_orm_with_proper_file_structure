@@ -10,9 +10,11 @@ export async function createUser(req: Request, res: Response){
 		age: age,
 	});
 
-	await user.save();
+	await user.save().then(()=>{
+		res.json(user);
+	});
 
-	res.json(user);
+	
 }
 
 
