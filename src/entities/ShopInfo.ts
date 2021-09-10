@@ -6,8 +6,9 @@ import {
 	PrimaryGeneratedColumn,
 	BaseEntity,
     ManyToOne,
-    JoinTable
+	JoinColumn
 } from 'typeorm';
+import { BeautyShop } from './BeautyShop';
 
 @Entity('tbl_shop_info')
 export class ShopInfo extends BaseEntity{
@@ -45,26 +46,17 @@ export class ShopInfo extends BaseEntity{
 	@Column()
 	is_active:boolean;
 
-    @ManyToOne((type) => ShopInfo, {
-		cascade: true,
-	})
-	@JoinTable({
-		name: 'tbl_beauty_shop',
-		joinColumn: {
-			name: 'shop_info',
-			referencedColumnName: 'id',
-		},
-		inverseJoinColumn: {
-			name: 'beauty_shop',
-			referencedColumnName: 'id',
-		},
-	})
-
-	ShopInfo: ShopInfo[];
+    @ManyToOne(type => BeautyShop)
+	@JoinColumn({
+        name: "beauty_shop_id",
+        referencedColumnName: "id"
+    })
+	beautyShop: BeautyShop;
 
 	@CreateDateColumn()
 	created_at: Date;
 
 	@UpdateDateColumn()
 	updated_at: Date;
+
 }

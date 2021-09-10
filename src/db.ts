@@ -1,5 +1,4 @@
 import { createConnection } from "typeorm";
-import { User } from "./entities/User";
 import express from "express";
 import { BeautyShop } from "./entities/BeautyShop";
 import { ShopInfo } from "./entities/ShopInfo";
@@ -12,8 +11,8 @@ export const main = async () => {
 			port: 5432,
 			username: 'postgres',
 			password: 'root',
-			database: 'dbUser',
-			entities: [User,BeautyShop,ShopInfo],
+			database: 'dbPrettyFox',
+			entities: [BeautyShop,ShopInfo],
 			synchronize: true,
 		});
 		console.log('Connected to Postgres');		

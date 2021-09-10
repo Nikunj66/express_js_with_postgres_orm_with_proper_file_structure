@@ -22,8 +22,6 @@ export class BeautyShop extends BaseEntity{
 	@Column()
 	is_active:boolean;
 
-	BeautyShop: BeautyShop[];
-
 	@CreateDateColumn()
 	created_at: Date;
 
